@@ -1,0 +1,33 @@
+.Page-Home {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+
+  h1 {
+    color: #1e2029;
+    font-family: Manrope;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px; /* 133.333% */
+  }
+
+  a {
+    background: #f7d54c;
+    color: #1e2029;
+    padding: 12px;
+    border-radius: 12px;
+    min-width: 200px;
+    text-align: center;
+
+    /* Heading 3/Bold */
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px; /* 133.333% */
+  }
+}

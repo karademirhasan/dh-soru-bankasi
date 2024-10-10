@@ -1,7 +1,5 @@
 @import 'variables';
 @import 'globals';
-
-
-body{
-    background-color: red;
-}
+@import 'mixins/mixins.scss';
+@import 'components/components.scss';
+@import 'pages/pages.scss';
