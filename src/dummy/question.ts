@@ -1,4 +1,4 @@
-interface Question {
+export interface Question {
   id: number;
   question: string;
   options: Record<string, string>;
@@ -8,13 +8,14 @@ interface Question {
 export const DUMMY_QUESTIONS: Question[] = [
   {
     id: 1,
-    question: "Aşağıdaki cümlelerin hangisinde 'yaklaşık' anlamı vardır?",
+    question: `<p>"Şair, şiirlerinde hava alacak boşluk bırakmıyor, her şeyi söylüyor. Okuyucunun adına da kendisi konuşuyor. Bunun için dizleri hayalinizi perdeliyor, soluğunuzu kesiyor, sizi boğuyor."</p>
+    <br/> <p><strong>Bu parçada geçen “hava alacak boşluk bırakmamak” sözüyle anlatılmak istenen aşağıdakilerden hangisidir?</strong></p>`,
     options: {
-      A: 'Onun gibi insanlar çok nadir bulunur.',
-      B: 'Her sabah erken saatlerde kalkar.',
-      C: 'Yaklaşık bir saat içinde eve varacağız.',
-      D: 'O konuyu bir süre sonra anlatırım.',
-      E: 'Bugün hava oldukça sıcak olacak.',
+      A: `<p><b>Görgüsüzce</b> davranmasaydın, seni böyle dışlamazdık.</p>`,
+      B: `<p>Ekip arkadaşlarıyla ters düşmeyen, <b>uyumlu</b> bir teknisyendi</p>`,
+      C: `<p>Her şeyin kendisinin olmasını isteyen <b>açgözlü</b> biriydi.</p>`,
+      D: `<p>Bir dediği bir dediğini tutmayan <b>tutarsız</b> bir gazeteciydi.</p>`,
+      E: `<p>Ağzında bakla ıslanmayan <b>boşboğaz</b> adamın tekiydi o.</p>`,
     },
     answer: 'C',
   },

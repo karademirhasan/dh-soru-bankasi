@@ -1,0 +1,79 @@
+.Button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  min-width: 140px;
+  gap: 5px;
+  padding: 15px 18px;
+  @include transition-default;
+  &:hover {
+    @include transition-default;
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  .label {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 800;
+  }
+  &.Size-small {
+    height: 42px;
+  }
+
+  &.Size-medium {
+    height: 50px;
+  }
+
+  &.Background-gray {
+    background-color: $Color-Background-2;
+    &:hover {
+      background-color: rgba($Color-Background-2, 0.8);
+    }
+  }
+
+  &.Background-green {
+    background-color: $Color-Green;
+    &:hover {
+      background-color: rgba($Color-Green, 0.8);
+    }
+  }
+
+  &.Background-yellow {
+    background-color: $Color-Yellow;
+    &:hover {
+      background-color: rgba($Color-Yellow, 0.8);
+    }
+  }
+
+  &.Color-white {
+    .label {
+      color: $Color-White;
+    }
+  }
+
+  &.Color-black {
+    .label {
+      color: $Color-Secondary;
+    }
+  }
+
+  &.IconDirection-start {
+    flex-direction: row;
+  }
+
+  &.IconDirection-end {
+    flex-direction: row-reverse;
+  }
+}

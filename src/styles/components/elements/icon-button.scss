@@ -1,0 +1,56 @@
+.IconButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  @include transition-default;
+  &:hover {
+    @include transition-default;
+  }
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+  &.Size-small {
+    width: 32px;
+    height: 32px;
+  }
+
+  &.Size-medium {
+    width: 50px;
+    height: 50px;
+  }
+
+  &.Size-Large {
+  }
+
+  &.Background-transparent {
+    background-color: transparent;
+  }
+
+  &.Background-gray {
+    background-color: rgba($Color-Background-2, 0.4);
+    &:hover {
+      background-color: rgba($Color-Background-2, 0.8);
+    }
+  }
+
+  &.Color-black {
+    svg {
+      path {
+        fill: $Color-Secondary;
+      }
+    }
+  }
+
+  &.Color-red {
+    svg {
+      path {
+        fill: $Color-Red;
+      }
+    }
+  }
+}

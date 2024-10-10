@@ -1,0 +1,13 @@
+.Badge {
+  border-radius: 5px;
+  background: $Color-Secondary;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $Color-White;
+  text-align: center;
+  @include Text-Body-4;
+  font-weight: 800;
+  padding: 8px;
+}

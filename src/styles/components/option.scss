@@ -1,0 +1,40 @@
+.Option {
+  display: flex;
+  align-items: center;
+  padding: 7px 16px;
+  border-radius: 10px;
+  background: rgba($color: $Color-Background-2, $alpha: 0.4);
+  @include transition-default;
+  &:hover {
+    background: rgba($color: $Color-Tertiary, $alpha: 0.1);
+    @include transition-default;
+    .action {
+      opacity: 1;
+      visibility: visible;
+      @include transition-default;
+    }
+  }
+  .check {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba($color: $Color-Background-2, $alpha: 0.4);
+    border: 1px solid $Color-Secondary;
+    margin-right: 15px;
+  }
+  .answer {
+    display: flex;
+    @include Text-Body-2;
+    color: $Color-Secondary;
+    b {
+      font-weight: 700;
+      text-decoration: underline;
+    }
+  }
+  .action {
+    margin-left: auto;
+    opacity: 0;
+    visibility: hidden;
+    @include transition-default;
+  }
+}
