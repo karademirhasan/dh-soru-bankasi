@@ -189,3 +189,13 @@ export const DUMMY_QUESTIONS: Question[] = [
     answer: 'B',
   },
 ];
+
+export interface TestDetail {
+  lesson: string;
+  test_name: string;
+}
+
+export const DUMMY_TEST_DETAIL: TestDetail = {
+  lesson: 'Türkçe',
+  test_name: 'Konu Tarama Testi #1',
+};

@@ -17,6 +17,11 @@ export enum Backgrounds {
   Yellow = 'yellow',
   Green = 'green',
 }
+
+export enum ButtonVariant {
+  Primary = 'primary',
+  Yellow = 'yellow',
+}
 export enum IconDirection {
   Start = 'start',
   End = 'end',
@@ -25,11 +30,4 @@ export enum IconDirection {
 export enum OptionStatus {
   Wrong = 'wrong',
   Correct = 'correct',
-}
-
-export interface Option {
-  data: {
-    key: string;
-    text: string;
-  };
 }

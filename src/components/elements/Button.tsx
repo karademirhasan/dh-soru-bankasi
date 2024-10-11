@@ -1,7 +1,7 @@
-import React, { createElement, ReactNode } from 'react';
+import React, { createElement, memo, ReactNode, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Backgrounds, Colors, IconDirection, Sizes } from 'types/enums';
+import { Backgrounds, ButtonVariant, Colors, IconDirection, Sizes } from 'types/enums';
 import { ButtonProps } from 'types/interfaces';
 import { ButtonHTMLAttributes } from 'react';
 
@@ -13,9 +13,10 @@ const Button = ({
   size = Sizes.Medium,
   color = Colors.Black,
   background = Backgrounds.Transparent,
+  variant = ButtonVariant.Primary,
   children,
 }: ButtonProps) => {
-  const classnames = `Button Color-${color} Background-${background} Size-${size} IconDirection-${iconDirection}`;
+  const classnames = `Button Variant-${variant} Color-${color} Background-${background} Size-${size} IconDirection-${iconDirection}`;
 
   return (
     <ButtonTag component={onClick ? 'button' : Link} className={classnames} onClick={onClick} to={to}>
@@ -25,7 +26,7 @@ const Button = ({
   );
 };
 
-export default Button;
+export default memo(Button);
 
 Button.propTypes = {
   to: PropTypes.string,

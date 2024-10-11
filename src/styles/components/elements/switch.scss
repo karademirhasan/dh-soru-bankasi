@@ -1,0 +1,45 @@
+.Switch {
+  border-radius: 10px;
+  background: rgba($color: $Color-Background-2, $alpha: 0.7);
+  padding: 14px 14px 14px 20px;
+  display: flex;
+  gap: 15px;
+
+  &-Label {
+    color: $Color-Primary;
+    @include Text-Body-3;
+    font-weight: 600;
+  }
+
+  &-Button {
+    cursor: pointer;
+    width: 42px;
+    height: 24px;
+    background-color: rgba($color: $Color-Green, $alpha: 0.6);
+    border-radius: 16px;
+    position: relative;
+    &.Checked {
+      background-color: $Color-Green;
+      &::after {
+        transform: translateX(15px);
+        @include transition-default;
+      }
+    }
+    &::after {
+      content: '';
+      top: 3px;
+      width: 18px;
+      height: 18px;
+      background-color: $Color-White;
+      position: absolute;
+      left: 4px;
+      border-radius: 50%;
+      transform: translateX(0);
+      @include transition-default;
+    }
+  }
+
+  &-Input {
+    display: none;
+  }
+}

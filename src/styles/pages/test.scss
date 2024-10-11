@@ -1,20 +1,29 @@
 .Page-Test {
   display: flex;
-  gap: 24px;
   margin-top: 35px;
   height: 100%;
   width: 100%;
+  flex-direction: column;
+  height: calc(100vh - 35px);
+  &-Header {
+    margin-bottom: 20px;
+  }
+  &-Container {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
   .Question {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: calc(100% - 352px - 24px);
     &-Header {
       display: flex;
       flex-direction: column;
       gap: 20px;
       margin-bottom: 30px;
-      .exit-test {
-      }
+
       h2 {
         color: #1e2029;
         @include Text-Heading-3;
@@ -27,8 +36,20 @@
     }
 
     &-Footer {
+      margin-top: auto;
       display: flex;
       justify-content: space-between;
+    }
+  }
+  .Answer {
+    width: 362px;
+
+    &-Header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 15px;
     }
   }
 }

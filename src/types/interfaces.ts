@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Backgrounds, Colors, IconDirection, Sizes } from 'types/enums';
+import { Backgrounds, ButtonVariant, Colors, IconDirection, Sizes } from 'types/enums';
 
 export interface ButtonProps {
   to?: string;
@@ -9,5 +9,6 @@ export interface ButtonProps {
   size?: Sizes;
   icon?: ReactNode;
   iconDirection?: IconDirection;
+  variant?: ButtonVariant;
   onClick?: () => void;
 }

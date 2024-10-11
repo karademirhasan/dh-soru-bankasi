@@ -42,7 +42,6 @@ export const QuestionDetail = ({ data }: QuestionDetailProps) => {
       <div className="QuestionDetail-Text" dangerouslySetInnerHTML={{ __html: data.question }}></div>
       <div className="QuestionDetail-Options">
         {Object.keys(data.options)?.map((option, index) => {
-          console.log(option, data.options[option]);
           return (
             <Option
               key={index}
