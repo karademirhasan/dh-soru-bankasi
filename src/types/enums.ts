@@ -5,18 +5,15 @@ export enum Sizes {
 }
 
 export enum Colors {
-  Black = 'black',
-  Red = 'red',
-  White = 'white',
-}
-
-export enum Backgrounds {
   Transparent = 'transparent',
   Gray = 'gray',
   LightGray = 'light-gray',
   Yellow = 'yellow',
   Green = 'green',
+  Red = 'red',
 }
+
+export enum Backgrounds {}
 
 export enum ButtonVariant {
   Primary = 'primary',

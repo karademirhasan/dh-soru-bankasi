@@ -13,6 +13,7 @@ import { IconWrapper } from 'components/elements/IconWrapper';
 import { Switch } from 'components/elements/Switch';
 import { useState } from 'react';
 import { AnswerKeys } from 'components/AnswerKeys';
+import { ModalExitTest } from 'components/ModalExitTest';
 
 export const Test = () => {
   const onClickBack = () => {
@@ -40,6 +41,7 @@ export const Test = () => {
 
   return (
     <div className="Page-Test">
+      <ModalExitTest></ModalExitTest>
       <div className="Page-Test-Header">
         <IconButton size={Sizes.Small} onClick={onClickBack}>
           <IconArrowLeft />

@@ -49,29 +49,27 @@
     height: 50px;
   }
 
-  &.Background-gray {
+  &.Color-gray {
     background-color: $Color-Background-2;
     &:hover {
       background-color: rgba($Color-Background-2, 0.8);
     }
   }
 
-  &.Background-green {
+  &.Color-green {
     background-color: $Color-Green;
     &:hover {
       background-color: rgba($Color-Green, 0.8);
     }
   }
 
-  &.Color-white {
+  &.Color-red {
+    background-color: $Color-Red;
     .label {
       color: $Color-White;
     }
-  }
-
-  &.Color-black {
-    .label {
-      color: $Color-Secondary;
+    &:hover {
+      background-color: rgba($Color-Red, 0.8);
     }
   }
 

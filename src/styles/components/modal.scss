@@ -1,0 +1,15 @@
+.modal-root {
+  position: fixed;
+  z-index: 1300;
+  inset: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba($Color-Primary, 0.5);
+}
+
+.Modal {
+  display: flex;
+  border-radius: 15px;
+  background: #fff;
+}
