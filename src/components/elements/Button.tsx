@@ -1,4 +1,4 @@
-import React, { createElement, memo, ReactNode, useEffect } from 'react';
+import React, { createElement, memo, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Backgrounds, ButtonVariant, Colors, IconDirection, Sizes } from 'types/enums';

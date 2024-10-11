@@ -1,5 +1,4 @@
 import { Question } from 'dummy/question';
-import React, { ReactNode } from 'react';
 import IconButton from './elements/IconButton';
 import { Backgrounds, Colors, Sizes } from 'types/enums';
 

@@ -12,13 +12,7 @@ export const Switch: React.FC<SwitchProps> = ({ label, value, onChange }) => {
       <div className="Switch-Label">{label}</div>
       <div className={`Switch-Button ${value ? 'Checked' : ''}`} onClick={() => onChange(!value)}></div>
       <div className="Switch-Input">
-        <input
-          type="checkbox"
-          value={value}
-          onChange={e => {
-            onChange(e.target.value);
-          }}
-        />
+        <input type="checkbox" checked={value} onChange={e => onChange(e.target.checked)} />
       </div>
     </div>
   );

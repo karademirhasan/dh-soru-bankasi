@@ -1,10 +1,11 @@
-import React from 'react';
-
 import IconLesson from 'assets/icons/lesson.svg';
 import { DUMMY_TEST_DETAIL, Question } from 'dummy/question';
 
-export const AnswerKeys = ({ data }) => {
-  console.log('data', data);
+interface AnswerKeysProps {
+  data: Question[];
+}
+
+export const AnswerKeys = ({ data }: AnswerKeysProps) => {
   return (
     <div className="AnswerKeys">
       <div className="AnswerKeys-Header">
@@ -20,7 +21,7 @@ export const AnswerKeys = ({ data }) => {
       </div>
       <div className="AnswerKeys-Questions">
         {[...data, ...data].map((question, index) => {
-          return <AnswerKey question={question} />;
+          return <AnswerKey key={index} question={question} />;
         })}
       </div>
     </div>
