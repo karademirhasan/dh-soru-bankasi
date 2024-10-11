@@ -1,6 +1,6 @@
 import IconArrowLeft from 'assets/icons/arrow-left.svg';
 import IconButton from 'components/elements/IconButton';
-import { Backgrounds, ButtonVariant, IconDirection, Sizes } from 'types/enums';
+import { ButtonVariant, Colors, IconDirection, Sizes } from 'types/enums';
 
 import IconChevronLeft from 'assets/icons/chevron-left.svg';
 import IconChevronRight from 'assets/icons/chevron-right.svg';
@@ -11,11 +11,14 @@ import { DUMMY_QUESTIONS, DUMMY_TEST_DETAIL } from 'dummy/question';
 import { QuestionDetail } from 'components/QuestionDetail';
 import { IconWrapper } from 'components/elements/IconWrapper';
 import { Switch } from 'components/elements/Switch';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { AnswerKeys } from 'components/AnswerKeys';
 import { ModalExitTest } from 'components/ModalExitTest';
+import { GlobalContext } from 'contexts/GlobalProvider';
 
 export const Test = () => {
+  const { openModalExitTest, setOpenModalExitTest } = useContext(GlobalContext);
+
   const onClickBack = () => {
     console.log('Back');
   };
@@ -29,7 +32,7 @@ export const Test = () => {
   };
 
   const onClickEndtoTest = () => {
-    console.log('End to Test');
+    setOpenModalExitTest(true);
   };
 
   const [valueSwitch, setValueSwitch] = useState(false);
@@ -39,9 +42,22 @@ export const Test = () => {
     setValueSwitch(value);
   };
 
+  const onCloseModalExitTest = () => {
+    setOpenModalExitTest(false);
+  };
+
+  const onClickExitTest = () => {
+    console.log('Exit Test');
+    setOpenModalExitTest(false);
+  };
+
   return (
     <div className="Page-Test">
-      <ModalExitTest></ModalExitTest>
+      <ModalExitTest
+        open={openModalExitTest}
+        onClose={onCloseModalExitTest}
+        onClickConfirm={onClickExitTest}
+      ></ModalExitTest>
       <div className="Page-Test-Header">
         <IconButton size={Sizes.Small} onClick={onClickBack}>
           <IconArrowLeft />
@@ -58,7 +74,7 @@ export const Test = () => {
           <div className="Question-Footer">
             <Button
               icon={<IconChevronLeft />}
-              background={Backgrounds.Gray}
+              color={Colors.Gray}
               iconDirection={IconDirection.Start}
               onClick={onClickPreviousQuestion}
             >
@@ -67,7 +83,7 @@ export const Test = () => {
 
             <Button
               icon={<IconChevronRight />}
-              background={Backgrounds.Gray}
+              color={Colors.Gray}
               iconDirection={IconDirection.End}
               onClick={onClickNextQuestion}
             >

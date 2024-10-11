@@ -27,11 +27,11 @@
   &.Size-Large {
   }
 
-  &.Background-transparent {
+  &.Color-transparent {
     background-color: transparent;
   }
 
-  &.Background-gray {
+  &.Color-gray {
     background-color: rgba($Color-Background-2, 0.4);
     &:hover {
       background-color: rgba($Color-Background-2, 0.8);
@@ -42,14 +42,6 @@
     svg {
       path {
         fill: $Color-Secondary;
-      }
-    }
-  }
-
-  &.Color-red {
-    svg {
-      path {
-        fill: $Color-Red;
       }
     }
   }

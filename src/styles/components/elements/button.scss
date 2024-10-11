@@ -29,18 +29,6 @@
     font-weight: 800;
   }
 
-  &.Variant-primary {
-  }
-
-  &.Variant-yellow {
-    background-color: $Color-Yellow;
-    gap: 12px;
-    justify-content: space-between;
-    padding-left: 7px;
-    &:hover {
-      background-color: rgba($Color-Yellow, 0.8);
-    }
-  }
   &.Size-small {
     height: 42px;
   }
@@ -58,6 +46,9 @@
 
   &.Color-green {
     background-color: $Color-Green;
+    .label {
+      color: $Color-White;
+    }
     &:hover {
       background-color: rgba($Color-Green, 0.8);
     }
@@ -79,5 +70,18 @@
 
   &.IconDirection-end {
     flex-direction: row-reverse;
+  }
+
+  &.Variant-primary {
+  }
+
+  &.Variant-yellow {
+    background-color: $Color-Yellow;
+    gap: 12px;
+    justify-content: space-between;
+    padding-left: 7px;
+    &:hover {
+      background-color: rgba($Color-Yellow, 0.8);
+    }
   }
 }

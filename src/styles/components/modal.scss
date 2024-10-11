@@ -1,4 +1,4 @@
-.modal-root {
+.Modal {
   position: fixed;
   z-index: 1300;
   inset: 0px;
@@ -8,8 +8,16 @@
   background-color: rgba($Color-Primary, 0.5);
 }
 
-.Modal {
+.Modal-Container {
   display: flex;
   border-radius: 15px;
   background: #fff;
+  flex-direction: column;
+  max-width: 470px;
+  padding: 0 30px 20px 30px;
+  &-Header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 6px;
+  }
 }

@@ -1,6 +1,6 @@
 import { Question } from 'dummy/question';
 import IconButton from './elements/IconButton';
-import { Backgrounds, Colors, Sizes } from 'types/enums';
+import { Colors, Sizes } from 'types/enums';
 
 import IconBrush from 'assets/icons/brush.svg';
 import IconZoomIn from 'assets/icons/zoom-in.svg';
@@ -19,21 +19,16 @@ export const QuestionDetail = ({ data }: QuestionDetailProps) => {
       <div className="QuestionDetail-Heading">
         <Badge>Soru: Türkçe #{data.id}</Badge>
         <div className="QuestionDetail-Heading-Actions">
-          <IconButton size={Sizes.Medium} background={Backgrounds.Gray} onClick={() => console.log('Bookmark')}>
+          <IconButton size={Sizes.Medium} color={Colors.Gray} onClick={() => console.log('Bookmark')}>
             <IconBrush />
           </IconButton>
-          <IconButton size={Sizes.Medium} background={Backgrounds.Gray} onClick={() => console.log('Bookmark')}>
+          <IconButton size={Sizes.Medium} color={Colors.Gray} onClick={() => console.log('Bookmark')}>
             <IconZoomIn />
           </IconButton>
-          <IconButton size={Sizes.Medium} background={Backgrounds.Gray} onClick={() => console.log('Bookmark')}>
+          <IconButton size={Sizes.Medium} color={Colors.Gray} onClick={() => console.log('Bookmark')}>
             <IconZoomOut />
           </IconButton>
-          <IconButton
-            color={Colors.Red}
-            size={Sizes.Medium}
-            background={Backgrounds.LightGray}
-            onClick={() => console.log('Bookmark')}
-          >
+          <IconButton size={Sizes.Medium} color={Colors.LightGray} onClick={() => console.log('Bookmark')}>
             <IconAlert />
           </IconButton>
         </div>
@@ -78,12 +73,7 @@ const Option = ({
         <span dangerouslySetInnerHTML={{ __html: text }}></span>
       </div>
       <div className="action">
-        <Button
-          size={Sizes.Small}
-          color={Colors.White}
-          onClick={() => console.log('qwe')}
-          background={Backgrounds.Green}
-        >
+        <Button size={Sizes.Small} color={Colors.Green} onClick={() => console.log('qwe')}>
           Cevapla
         </Button>
       </div>
