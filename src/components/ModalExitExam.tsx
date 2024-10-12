@@ -6,10 +6,10 @@ import { Colors } from 'types/enums';
 
 import { FC } from 'react';
 
-export const ModalExitTest: FC<ModalProps> = ({ open, onClose, onClickConfirm }) => {
+export const ModalExitExam: FC<ModalProps> = ({ open, onClose, onClickConfirm }) => {
   return (
     <Modal open={open} onClose={onClose}>
-      <div className="Modal-ExitTest">
+      <div className="Modal-ExitExam">
         <div className="icon">
           <IconAlert />
         </div>

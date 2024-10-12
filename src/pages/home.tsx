@@ -5,7 +5,7 @@ export const Home = () => {
   return (
     <div className="Page-Home">
       <h1>Doping Hafıza</h1>
-      <Link to="/test">Teste Başlat</Link>
+      <Link to="/exam">Testi Başlat</Link>
     </div>
   );
 };

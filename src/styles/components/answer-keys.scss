@@ -6,21 +6,21 @@
   padding: 16px 16px;
   &-Header {
     margin-bottom: 22px;
-    .test-info {
+    .exam-info {
       display: flex;
       gap: 12px;
-      .test-icon {
+      .exam-icon {
       }
-      .test-summary {
+      .exam-summary {
         display: flex;
         flex-direction: column;
         gap: 5px;
-        .test-name {
+        .exam-name {
           @include Text-Heading-6;
           font-weight: 600;
           color: $Color-Primary;
         }
-        .test-numbers {
+        .exam-numbers {
           color: $Color-Tertiary;
           @include Text-Body-4;
         }

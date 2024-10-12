@@ -4,21 +4,21 @@ interface GlobalProviderProps {
   children: React.ReactNode;
 }
 interface GlobalContextValue {
-  openModalExitTest: boolean;
-  setOpenModalExitTest: React.Dispatch<React.SetStateAction<boolean>>;
+  openModalExitExam: boolean;
+  setOpenModalExitExam: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const GlobalContext = createContext<GlobalContextValue>({
-  openModalExitTest: false,
-  setOpenModalExitTest: () => {},
+  openModalExitExam: false,
+  setOpenModalExitExam: () => {},
 });
 
 const GlobalProvider: React.FC<GlobalProviderProps> = ({ children }) => {
-  const [openModalExitTest, setOpenModalExitTest] = useState<boolean>(false);
+  const [openModalExitExam, setOpenModalExitExam] = useState<boolean>(false);
 
   const value = {
-    openModalExitTest,
-    setOpenModalExitTest,
+    openModalExitExam,
+    setOpenModalExitExam,
   };
 
   return <GlobalContext.Provider value={value}>{children}</GlobalContext.Provider>;

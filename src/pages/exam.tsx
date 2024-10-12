@@ -7,17 +7,17 @@ import IconChevronRight from 'assets/icons/chevron-right.svg';
 import IconPower from 'assets/icons/power.svg';
 
 import Button from 'components/elements/Button';
-import { DUMMY_QUESTIONS, DUMMY_TEST_DETAIL } from 'dummy/question';
+import { DUMMY_QUESTIONS, DUMMY_EXAM_DETAIL } from 'dummy/question';
 import { QuestionDetail } from 'components/QuestionDetail';
 import { IconWrapper } from 'components/elements/IconWrapper';
 import { Switch } from 'components/elements/Switch';
 import { useContext, useState } from 'react';
 import { AnswerKeys } from 'components/AnswerKeys';
-import { ModalExitTest } from 'components/ModalExitTest';
 import { GlobalContext } from 'contexts/GlobalProvider';
+import { ModalExitExam } from 'components/ModalExitExam';
 
-export const Test = () => {
-  const { openModalExitTest, setOpenModalExitTest } = useContext(GlobalContext);
+export const Exam = () => {
+  const { openModalExitExam, setOpenModalExitExam } = useContext(GlobalContext);
 
   const onClickBack = () => {
     console.log('Back');
@@ -31,8 +31,8 @@ export const Test = () => {
     console.log('Next Question');
   };
 
-  const onClickEndtoTest = () => {
-    setOpenModalExitTest(true);
+  const onClickEndtoExam = () => {
+    setOpenModalExitExam(true);
   };
 
   const [valueSwitch, setValueSwitch] = useState(false);
@@ -42,31 +42,31 @@ export const Test = () => {
     setValueSwitch(value);
   };
 
-  const onCloseModalExitTest = () => {
-    setOpenModalExitTest(false);
+  const onCloseModalExitExam = () => {
+    setOpenModalExitExam(false);
   };
 
-  const onClickExitTest = () => {
-    console.log('Exit Test');
-    setOpenModalExitTest(false);
+  const onClickExitExam = () => {
+    console.log('Exit Exam');
+    setOpenModalExitExam(false);
   };
 
   return (
-    <div className="Page-Test">
-      <ModalExitTest
-        open={openModalExitTest}
-        onClose={onCloseModalExitTest}
-        onClickConfirm={onClickExitTest}
-      ></ModalExitTest>
-      <div className="Page-Test-Header">
+    <div className="Page-Exam">
+      <ModalExitExam
+        open={openModalExitExam}
+        onClose={onCloseModalExitExam}
+        onClickConfirm={onClickExitExam}
+      ></ModalExitExam>
+      <div className="Page-Exam-Header">
         <IconButton size={Sizes.Small} onClick={onClickBack}>
           <IconArrowLeft />
         </IconButton>
       </div>
-      <div className="Page-Test-Container">
+      <div className="Page-Exam-Container">
         <div className="Question">
           <div className="Question-Header">
-            <h2>{DUMMY_TEST_DETAIL.test_name}</h2>
+            <h2>{DUMMY_EXAM_DETAIL.exam_name}</h2>
           </div>
           <div className="Question-Area">
             <QuestionDetail data={DUMMY_QUESTIONS[0]} />
@@ -102,7 +102,7 @@ export const Test = () => {
               }
               variant={ButtonVariant.Yellow}
               iconDirection={IconDirection.Start}
-              onClick={onClickEndtoTest}
+              onClick={onClickEndtoExam}
             >
               Testi Bitir
             </Button>

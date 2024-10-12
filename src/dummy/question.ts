@@ -190,12 +190,12 @@ export const DUMMY_QUESTIONS: Question[] = [
   },
 ];
 
-export interface TestDetail {
+export interface ExamDetail {
   lesson: string;
-  test_name: string;
+  exam_name: string;
 }
 
-export const DUMMY_TEST_DETAIL: TestDetail = {
+export const DUMMY_EXAM_DETAIL: ExamDetail = {
   lesson: 'Türkçe',
-  test_name: 'Konu Tarama Testi #1',
+  exam_name: 'Konu Tarama Testi #1',
 };

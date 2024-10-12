@@ -1,5 +1,5 @@
 import IconLesson from 'assets/icons/lesson.svg';
-import { DUMMY_TEST_DETAIL, Question } from 'dummy/question';
+import { DUMMY_EXAM_DETAIL, Question } from 'dummy/question';
 
 interface AnswerKeysProps {
   data: Question[];
@@ -9,13 +9,13 @@ export const AnswerKeys = ({ data }: AnswerKeysProps) => {
   return (
     <div className="AnswerKeys">
       <div className="AnswerKeys-Header">
-        <div className="test-info">
-          <div className="test-icon">
+        <div className="exam-info">
+          <div className="exam-icon">
             <IconLesson />
           </div>
-          <div className="test-summary">
-            <div className="test-name">{DUMMY_TEST_DETAIL.lesson}</div>
-            <div className="test-numbers">{data.length} Soru</div>
+          <div className="exam-summary">
+            <div className="exam-name">{DUMMY_EXAM_DETAIL.lesson}</div>
+            <div className="exam-numbers">{data.length} Soru</div>
           </div>
         </div>
       </div>

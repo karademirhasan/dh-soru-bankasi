@@ -1,5 +1,5 @@
 import { Home } from 'pages/home';
-import { Test } from 'pages/test';
+import { Exam } from 'pages/exam';
 
 export const ROUTES = [
   {
@@ -7,8 +7,8 @@ export const ROUTES = [
     element: <Home />,
   },
   {
-    path: '/test',
-    element: <Test />,
+    path: '/exam',
+    element: <Exam />,
   },
   {
     path: '*',
