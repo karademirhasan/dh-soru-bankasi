@@ -1,6 +1,6 @@
 import IconArrowLeft from 'assets/icons/arrow-left.svg';
 import IconButton from 'components/elements/IconButton';
-import { ButtonVariant, Colors, IconDirection, Sizes } from 'types/enums';
+import { Colors, IconDirection, Sizes } from 'types/enums';
 
 import IconChevronLeft from 'assets/icons/chevron-left.svg';
 import IconChevronRight from 'assets/icons/chevron-right.svg';
@@ -125,7 +125,7 @@ export const Exam = () => {
                   <IconPower />
                 </IconWrapper>
               }
-              variant={ButtonVariant.Yellow}
+              color={Colors.Yellow}
               iconDirection={IconDirection.Start}
               onClick={onClickEndtoExam}
             >

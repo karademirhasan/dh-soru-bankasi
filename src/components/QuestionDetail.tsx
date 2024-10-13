@@ -12,6 +12,8 @@ import Badge from './elements/Badge';
 import Button from './elements/Button';
 import { useAppDispatch, useAppSelector } from 'store';
 import { updateUserAnswers } from 'features/exam/examSlice';
+import { decreaseZoomLevel, increaseZoomLevel } from 'features/exam/uiSlice';
+import { MAX_ZOOM_LEVEL } from 'constant/global';
 
 interface QuestionDetailProps {
   data: Question;
@@ -19,10 +21,19 @@ interface QuestionDetailProps {
 
 export const QuestionDetail = ({ data }: QuestionDetailProps) => {
   const dispatch = useAppDispatch();
+  const { zoom_level } = useAppSelector(state => state.ui);
 
   const { user_answers } = useAppSelector(state => state.exam);
   const onClickAnwser = (question_id: number, option_key: string) => {
     dispatch(updateUserAnswers({ question_id, option_key }));
+  };
+
+  const onClickZoomIn = () => {
+    dispatch(increaseZoomLevel());
+  };
+
+  const onClickZoomOut = () => {
+    dispatch(decreaseZoomLevel());
   };
 
   return (
@@ -33,10 +44,15 @@ export const QuestionDetail = ({ data }: QuestionDetailProps) => {
           <IconButton size={Sizes.Medium} color={Colors.Gray} onClick={() => console.log('Bookmark')}>
             <IconBrush />
           </IconButton>
-          <IconButton size={Sizes.Medium} color={Colors.Gray} onClick={() => console.log('Bookmark')}>
+          <IconButton
+            disabled={zoom_level === MAX_ZOOM_LEVEL}
+            size={Sizes.Medium}
+            color={Colors.Gray}
+            onClick={onClickZoomIn}
+          >
             <IconZoomIn />
           </IconButton>
-          <IconButton size={Sizes.Medium} color={Colors.Gray} onClick={() => console.log('Bookmark')}>
+          <IconButton disabled={zoom_level === 1} size={Sizes.Medium} color={Colors.Gray} onClick={onClickZoomOut}>
             <IconZoomOut />
           </IconButton>
           <IconButton size={Sizes.Medium} color={Colors.Gray} onClick={() => console.log('Bookmark')}>
@@ -44,7 +60,10 @@ export const QuestionDetail = ({ data }: QuestionDetailProps) => {
           </IconButton>
         </div>
       </div>
-      <div className="QuestionDetail-Text" dangerouslySetInnerHTML={{ __html: data.question }}></div>
+      <div
+        className={`QuestionDetail-Text zoom-level-${zoom_level}`}
+        dangerouslySetInnerHTML={{ __html: data.question }}
+      ></div>
       <div className="QuestionDetail-Options">
         {Object.keys(data?.options)?.map((option, index) => {
           return (
@@ -75,6 +94,7 @@ interface IOption {
 
 const Option = ({ user_answer, onClickAnwser, option_key, question_id, text, correct_answer }: IOption) => {
   const { show_correct_answers } = useAppSelector(state => state.exam);
+  const { zoom_level } = useAppSelector(state => state.ui);
 
   const is_selected = user_answer === option_key;
   const is_correct = correct_answer === option_key;
@@ -90,7 +110,7 @@ const Option = ({ user_answer, onClickAnwser, option_key, question_id, text, cor
   return (
     <div className={classname}>
       <span className="Option-Check"></span>
-      <div className="Option-Text">
+      <div className={`Option-Text zoom-level-${zoom_level}`}>
         <span>
           {option_key}
           {`)`}

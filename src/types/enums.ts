@@ -13,10 +13,6 @@ export enum Colors {
   Red = 'red',
 }
 
-export enum ButtonVariant {
-  Primary = 'primary',
-  Yellow = 'yellow',
-}
 export enum IconDirection {
   Start = 'start',
   End = 'end',

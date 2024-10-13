@@ -64,24 +64,25 @@
     }
   }
 
+  &.Color-yellow {
+    background-color: $Color-Yellow;
+    gap: 12px;
+    justify-content: center;
+
+    &.hasIcon {
+      justify-content: space-between;
+      padding-left: 7px;
+    }
+    &:hover {
+      background-color: rgba($Color-Yellow, 0.8);
+    }
+  }
+
   &.IconDirection-start {
     flex-direction: row;
   }
 
   &.IconDirection-end {
     flex-direction: row-reverse;
-  }
-
-  &.Variant-primary {
-  }
-
-  &.Variant-yellow {
-    background-color: $Color-Yellow;
-    gap: 12px;
-    justify-content: space-between;
-    padding-left: 7px;
-    &:hover {
-      background-color: rgba($Color-Yellow, 0.8);
-    }
   }
 }

@@ -8,9 +8,10 @@ const IconButton = ({
   onClick,
   size = Sizes.Medium,
   color = Colors.Gray,
+  disabled = false,
   children,
 }: Omit<ButtonProps, 'icon' | 'iconDirection'>) => {
-  const classnames = `IconButton Color-${color}  Size-${size}`;
+  const classnames = `IconButton Color-${color}  Size-${size} ${disabled ? 'Disabled' : ''}`;
 
   if (onClick) {
     return (

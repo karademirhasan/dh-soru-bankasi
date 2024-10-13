@@ -17,7 +17,7 @@
   .Question {
     display: flex;
     flex-direction: column;
-    width: calc(100% - 352px - 24px);
+    width: calc(100% - 382px - 24px);
     &-Header {
       display: flex;
       flex-direction: column;
@@ -42,7 +42,7 @@
     }
   }
   .Answer {
-    width: 362px;
+    width: 382px;
 
     &-Header {
       display: flex;

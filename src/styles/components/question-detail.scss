@@ -17,6 +17,8 @@
 
   &-Text {
     margin-bottom: 100px;
+    @include Text-Body-1;
+    @include generateZoomLevel();
   }
   &-Options {
     display: flex;

@@ -1,7 +1,7 @@
 import React, { createElement, memo, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { ButtonVariant, Colors, IconDirection, Sizes } from 'types/enums';
+import { Colors, IconDirection, Sizes } from 'types/enums';
 import { ButtonProps } from 'types/interfaces';
 import { ButtonHTMLAttributes } from 'react';
 
@@ -12,11 +12,12 @@ const Button = ({
   iconDirection = IconDirection.Start,
   size = Sizes.Medium,
   color = Colors.Gray,
-  variant = ButtonVariant.Primary,
   children,
   className = '',
 }: ButtonProps) => {
-  const classnames = `Button Variant-${variant} Color-${color}  Size-${size} IconDirection-${iconDirection} ${className}`;
+  const classnames = `Button Color-${color}  Size-${size} ${
+    icon ? 'has-icon' : ''
+  } IconDirection-${iconDirection} ${className}`;
 
   return (
     <ButtonTag component={onClick ? 'button' : Link} className={classnames} onClick={onClick} to={to}>

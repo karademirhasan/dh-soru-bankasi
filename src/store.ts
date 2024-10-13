@@ -3,10 +3,12 @@ import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch } from 'react-redux';
 import examSlice from 'features/exam/examSlice';
 import { useSelector } from 'react-redux';
+import uiSlice from 'features/exam/uiSlice';
 
 const store = configureStore({
   reducer: {
     exam: examSlice,
+    ui: uiSlice,
   },
 });
 

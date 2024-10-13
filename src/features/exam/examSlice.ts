@@ -16,7 +16,7 @@ const initialState: IExamState = {
   user_answers: {},
 };
 
-export const uiSlice = createSlice({
+export const examSlice = createSlice({
   name: 'exam',
   initialState,
   reducers: {
@@ -41,6 +41,6 @@ export const uiSlice = createSlice({
   },
 });
 
-export const { resetState, updateActiveQuestionID, updateUserAnswers, changeShowedAnswers } = uiSlice.actions;
+export const { resetState, updateActiveQuestionID, updateUserAnswers, changeShowedAnswers } = examSlice.actions;
 
-export default uiSlice.reducer;
+export default examSlice.reducer;

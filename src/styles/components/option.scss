@@ -89,6 +89,7 @@
     display: flex;
     @include Text-Body-2;
     color: $Color-Secondary;
+    @include generateZoomLevel();
     b {
       font-weight: 700;
       text-decoration: underline;

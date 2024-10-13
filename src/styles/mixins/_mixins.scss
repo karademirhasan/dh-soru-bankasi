@@ -13,3 +13,12 @@
 @mixin transition-default {
   transition: all 200ms ease-in-out;
 }
+
+@mixin generateZoomLevel($level: 10) {
+  @for $i from 1 through $level {
+    &.zoom-level-#{$i} {
+      font-size: 10px + $i * 2;
+      line-height: 150%;
+    }
+  }
+}
