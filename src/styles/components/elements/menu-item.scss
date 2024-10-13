@@ -12,7 +12,7 @@
     height: 30px;
   }
   &:hover {
-    background-color: #f3f7f9;
+    background-color: $Color-LightGray;
     @include transition-default;
   }
 }

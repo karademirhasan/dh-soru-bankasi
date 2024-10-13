@@ -1,11 +1,15 @@
 import IconLesson from 'assets/icons/lesson.svg';
 import { DUMMY_EXAM_DETAIL, Question } from 'dummy/question';
+import { UserAnswers } from 'features/exam/examSlice';
 
 interface AnswerKeysProps {
   data: Question[];
+  answers: UserAnswers;
+  active_question: number;
+  updateActiveQuestion: (question_id: number) => void;
 }
 
-export const AnswerKeys = ({ data }: AnswerKeysProps) => {
+export const AnswerKeys = ({ data, answers, active_question, updateActiveQuestion }: AnswerKeysProps) => {
   return (
     <div className="AnswerKeys">
       <div className="AnswerKeys-Header">
@@ -20,22 +24,43 @@ export const AnswerKeys = ({ data }: AnswerKeysProps) => {
         </div>
       </div>
       <div className="AnswerKeys-Questions">
-        {[...data, ...data].map((question, index) => {
-          return <AnswerKey key={index} question={question} />;
+        {data.map(question => {
+          return (
+            <AnswerKey
+              onClickUpdateActiveQuestion={updateActiveQuestion}
+              is_active_question={question.id === active_question}
+              answer={answers?.[question.id]}
+              key={question.id}
+              question={question}
+            />
+          );
         })}
       </div>
     </div>
   );
 };
 
-const AnswerKey = ({ question }: { question: Question }) => {
+const AnswerKey = ({
+  question,
+  answer,
+  is_active_question,
+  onClickUpdateActiveQuestion,
+}: {
+  question: Question;
+  answer: number | null | string;
+  is_active_question: boolean;
+  onClickUpdateActiveQuestion: (question_id: number) => void;
+}) => {
+  const handlerOnClickUpdateActiveQuestion = () => {
+    onClickUpdateActiveQuestion(question.id);
+  };
   return (
-    <div className="AnswerKey">
+    <div onClick={handlerOnClickUpdateActiveQuestion} className={`AnswerKey ${is_active_question ? 'active' : ''}`}>
       <div className="question-number">{question.id}. Soru</div>
       <div className="options">
         {['A', 'B', 'C', 'D', 'E'].map((option, index) => {
           return (
-            <div key={index} className="option">
+            <div key={index} className={`option ${answer === option ? 'selected' : ''}`}>
               {option}
             </div>
           );

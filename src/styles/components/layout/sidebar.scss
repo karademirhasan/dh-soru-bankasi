@@ -1,8 +1,8 @@
 .Sidebar {
   width: 97px;
   height: 100%;
-  background-color: #fff;
-  border-right: 1px solid #f0f1f3;
+  background-color: $Color-White;
+  border-right: 1px solid $Color-LightGray-2;
   filter: drop-shadow(4px 4px 16px rgba(112, 144, 176, 0.1));
   padding: 20px;
   display: flex;

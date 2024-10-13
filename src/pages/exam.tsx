@@ -11,35 +11,52 @@ import { DUMMY_QUESTIONS, DUMMY_EXAM_DETAIL } from 'dummy/question';
 import { QuestionDetail } from 'components/QuestionDetail';
 import { IconWrapper } from 'components/elements/IconWrapper';
 import { Switch } from 'components/elements/Switch';
-import { useContext, useState } from 'react';
+import { useContext, useMemo } from 'react';
 import { AnswerKeys } from 'components/AnswerKeys';
 import { GlobalContext } from 'contexts/GlobalProvider';
+import { useAppDispatch, useAppSelector } from 'store';
+import { changeShowedAnswers, resetState, updateActiveQuestionID } from 'features/exam/examSlice';
+import { useNavigate } from 'react-router-dom';
 import { ModalExitExam } from 'components/ModalExitExam';
+import { ModalResult } from 'components/ModalResult';
 
 export const Exam = () => {
-  const { openModalExitExam, setOpenModalExitExam } = useContext(GlobalContext);
+  const dispatch = useAppDispatch();
+  const { user_answers, active_question_id, show_correct_answers } = useAppSelector(state => state.exam);
+  const navigate = useNavigate();
+
+  const { openModalExitExam, setOpenModalExitExam, openModalResult, setOpenModalResult } = useContext(GlobalContext);
+
+  const activeQuestion = useMemo(() => {
+    return DUMMY_QUESTIONS.find(question => question.id === active_question_id);
+  }, [active_question_id]);
 
   const onClickBack = () => {
-    console.log('Back');
+    navigate('/');
   };
 
   const onClickPreviousQuestion = () => {
-    console.log('Previous Question');
+    if (active_question_id > 1) {
+      dispatch(updateActiveQuestionID(active_question_id - 1));
+    }
   };
 
   const onClickNextQuestion = () => {
-    console.log('Next Question');
+    if (active_question_id < DUMMY_QUESTIONS.length) {
+      dispatch(updateActiveQuestionID(active_question_id + 1));
+    }
+  };
+
+  const updateActiveQuestion = (question_id: number) => {
+    dispatch(updateActiveQuestionID(question_id));
   };
 
   const onClickEndtoExam = () => {
     setOpenModalExitExam(true);
   };
 
-  const [valueSwitch, setValueSwitch] = useState(false);
-
-  const onChangeSwitch = (value: boolean) => {
-    console.log('Switch', value);
-    setValueSwitch(value);
+  const onChangeSwitch = () => {
+    dispatch(changeShowedAnswers());
   };
 
   const onCloseModalExitExam = () => {
@@ -47,8 +64,17 @@ export const Exam = () => {
   };
 
   const onClickExitExam = () => {
-    console.log('Exit Exam');
     setOpenModalExitExam(false);
+    setOpenModalResult(true);
+  };
+
+  const onCloseModalResult = () => {
+    setOpenModalResult(false);
+  };
+
+  const onClickNewExam = () => {
+    dispatch(resetState());
+    setOpenModalResult(false);
   };
 
   return (
@@ -58,6 +84,7 @@ export const Exam = () => {
         onClose={onCloseModalExitExam}
         onClickConfirm={onClickExitExam}
       ></ModalExitExam>
+      <ModalResult open={openModalResult} onClose={onCloseModalResult} onClickConfirm={onClickNewExam}></ModalResult>
       <div className="Page-Exam-Header">
         <IconButton size={Sizes.Small} onClick={onClickBack}>
           <IconArrowLeft />
@@ -68,9 +95,7 @@ export const Exam = () => {
           <div className="Question-Header">
             <h2>{DUMMY_EXAM_DETAIL.exam_name}</h2>
           </div>
-          <div className="Question-Area">
-            <QuestionDetail data={DUMMY_QUESTIONS[0]} />
-          </div>
+          <div className="Question-Area">{activeQuestion && <QuestionDetail data={activeQuestion} />}</div>
           <div className="Question-Footer">
             <Button
               icon={<IconChevronLeft />}
@@ -93,7 +118,7 @@ export const Exam = () => {
         </div>
         <div className="Answer">
           <div className="Answer-Header">
-            <Switch label={'Cevapları Göster'} value={valueSwitch} onChange={onChangeSwitch} />
+            <Switch label={'Cevapları Göster'} value={show_correct_answers} onChange={onChangeSwitch} />
             <Button
               icon={
                 <IconWrapper>
@@ -108,7 +133,12 @@ export const Exam = () => {
             </Button>
           </div>
           <div className="Answer-Area">
-            <AnswerKeys data={DUMMY_QUESTIONS} />
+            <AnswerKeys
+              updateActiveQuestion={updateActiveQuestion}
+              active_question={active_question_id}
+              answers={user_answers}
+              data={DUMMY_QUESTIONS}
+            />
           </div>
         </div>
       </div>

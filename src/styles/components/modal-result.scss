@@ -1,0 +1,21 @@
+.Modal-Result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .title {
+    margin-bottom: 21px;
+    @include Text-Heading-3;
+    font-weight: 800;
+  }
+  .result {
+    @include Text-Body-2;
+    margin-bottom: 35px;
+  }
+  .actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+}

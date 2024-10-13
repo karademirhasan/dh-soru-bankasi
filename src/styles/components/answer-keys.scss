@@ -1,6 +1,6 @@
 .AnswerKeys {
   border-radius: 10px;
-  background: #fff;
+  background: $Color-White;
   box-shadow: 0px 12px 50px 0px rgba(0, 0, 0, 0.04);
 
   padding: 16px 16px;
@@ -50,6 +50,17 @@
   background: rgba($color: $Color-Blue, $alpha: 0.07);
   padding: 10px 10px 10px 15px;
   gap: 15px;
+  user-select: none;
+  cursor: pointer;
+  @include transition-default;
+  &:hover {
+    background-color: rgba($color: $Color-Blue, $alpha: 0.16);
+    @include transition-default;
+  }
+  &.active {
+    background-color: rgba($color: $Color-Blue, $alpha: 0.24);
+    @include transition-default;
+  }
   .question-number {
     @include Text-Body-3;
     color: $Color-Primary;
@@ -69,6 +80,13 @@
       @include Text-Body-2;
       text-align: center;
       color: $Color-Border-Blue;
+      @include transition-default;
+      &.selected {
+        background-color: $Color-Blue;
+        color: $Color-White;
+        border-color: $Color-Blue;
+        @include transition-default;
+      }
     }
   }
 }

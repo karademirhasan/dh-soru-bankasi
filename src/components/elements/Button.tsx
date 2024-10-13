@@ -14,8 +14,9 @@ const Button = ({
   color = Colors.Gray,
   variant = ButtonVariant.Primary,
   children,
+  className = '',
 }: ButtonProps) => {
-  const classnames = `Button Variant-${variant} Color-${color}  Size-${size} IconDirection-${iconDirection}`;
+  const classnames = `Button Variant-${variant} Color-${color}  Size-${size} IconDirection-${iconDirection} ${className}`;
 
   return (
     <ButtonTag component={onClick ? 'button' : Link} className={classnames} onClick={onClick} to={to}>

@@ -11,13 +11,15 @@
 .Modal-Container {
   display: flex;
   border-radius: 15px;
-  background: #fff;
+  background: $Color-White;
   flex-direction: column;
-  max-width: 470px;
-  padding: 0 30px 20px 30px;
+  width: 470px;
   &-Header {
     display: flex;
     justify-content: flex-end;
     padding: 6px;
+  }
+  &-Content {
+    padding: 0 30px 20px 30px;
   }
 }

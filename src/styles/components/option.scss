@@ -4,17 +4,80 @@
   padding: 7px 16px;
   border-radius: 10px;
   background: rgba($color: $Color-Background-2, $alpha: 0.4);
+  border: 1px solid transparent;
+  height: 54px;
   @include transition-default;
+
   &:hover {
     background: rgba($color: $Color-Tertiary, $alpha: 0.1);
     @include transition-default;
-    .action {
-      opacity: 1;
-      visibility: visible;
-      @include transition-default;
+    .Option-Actions {
+      .button-answer {
+        opacity: 1;
+        visibility: visible;
+        @include transition-default;
+      }
     }
   }
-  .check {
+
+  &.selected {
+    background: rgba($color: $Color-Green, $alpha: 0.24);
+    border-color: $Color-Green-2;
+    @include transition-default;
+    .Option-Check {
+      border-color: $Color-Green;
+    }
+    .Option-Text {
+      font-weight: 700;
+      color: $Color-Green-2;
+    }
+  }
+
+  &.selected-wrong {
+    background: rgba($color: $Color-Red, $alpha: 1);
+    border-color: $Color-Red;
+    @include transition-default;
+    .Option-Check {
+      border-color: $Color-Red;
+      border-width: 2px;
+      background-color: $Color-White;
+      outline: 2px solid $Color-White;
+      width: 21px;
+      height: 21px;
+    }
+    .Option-Text {
+      font-weight: 700;
+      color: $Color-White;
+    }
+  }
+
+  &.selected-correct {
+    background: rgba($color: $Color-Green, $alpha: 1);
+    border-color: $Color-Green;
+    @include transition-default;
+    .Option-Check {
+      border-color: $Color-Green;
+    }
+    .Option-Text {
+      font-weight: 700;
+      color: $Color-White;
+    }
+  }
+
+  &.mark-correct {
+    background: rgba($color: $Color-Green, $alpha: 0.24);
+    border-color: $Color-Green-2;
+    @include transition-default;
+    .Option-Check {
+      border-color: $Color-Green;
+    }
+    .Option-Text,
+    .Option-Text > * {
+      font-weight: 700;
+      color: $Color-Green-2;
+    }
+  }
+  &-Check {
     width: 24px;
     height: 24px;
     border-radius: 50%;
@@ -22,7 +85,7 @@
     border: 1px solid $Color-Secondary;
     margin-right: 15px;
   }
-  .answer {
+  &-Text {
     display: flex;
     @include Text-Body-2;
     color: $Color-Secondary;
@@ -31,10 +94,12 @@
       text-decoration: underline;
     }
   }
-  .action {
+  &-Actions {
     margin-left: auto;
-    opacity: 0;
-    visibility: hidden;
-    @include transition-default;
+    .button-answer {
+      opacity: 0;
+      visibility: hidden;
+      @include transition-default;
+    }
   }
 }

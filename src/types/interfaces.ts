@@ -10,4 +10,5 @@ export interface ButtonProps {
   iconDirection?: IconDirection;
   variant?: ButtonVariant;
   onClick?: () => void;
+  className?: string;
 }

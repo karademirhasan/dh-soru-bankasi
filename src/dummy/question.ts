@@ -2,7 +2,7 @@ export interface Question {
   id: number;
   question: string;
   options: Record<string, string>;
-  answer: string;
+  correct_answer: string;
 }
 
 export const DUMMY_QUESTIONS: Question[] = [
@@ -17,7 +17,7 @@ export const DUMMY_QUESTIONS: Question[] = [
       D: `<p>Bir dediği bir dediğini tutmayan <b>tutarsız</b> bir gazeteciydi.</p>`,
       E: `<p>Ağzında bakla ıslanmayan <b>boşboğaz</b> adamın tekiydi o.</p>`,
     },
-    answer: 'C',
+    correct_answer: 'C',
   },
   {
     id: 2,
@@ -30,7 +30,7 @@ export const DUMMY_QUESTIONS: Question[] = [
       D: 'Okuyamadım',
       E: 'Sevemedim',
     },
-    answer: 'A',
+    correct_answer: 'A',
   },
   {
     id: 3,
@@ -42,7 +42,7 @@ export const DUMMY_QUESTIONS: Question[] = [
       D: 'Mübalağa',
       E: 'Tenasüp',
     },
-    answer: 'D',
+    correct_answer: 'D',
   },
   {
     id: 4,
@@ -54,7 +54,7 @@ export const DUMMY_QUESTIONS: Question[] = [
       D: 'Gelecek hafta sınavları çalışmak için zamanım olmayacak.',
       E: 'O konuyu konuşarak çözdük.',
     },
-    answer: 'D',
+    correct_answer: 'D',
   },
   {
     id: 5,
@@ -66,7 +66,7 @@ export const DUMMY_QUESTIONS: Question[] = [
       D: 'Dün gece çok yağmur yağdı.',
       E: 'Dünyanın en yüksek dağı Everest’tir.',
     },
-    answer: 'C',
+    correct_answer: 'C',
   },
   {
     id: 6,
@@ -78,7 +78,7 @@ export const DUMMY_QUESTIONS: Question[] = [
       D: 'Zamanı geldiğinde her şey hallolur.',
       E: 'Bu qınu çözmek için çok uğraştım.',
     },
-    answer: 'A',
+    correct_answer: 'A',
   },
   {
     id: 7,
@@ -90,7 +90,7 @@ export const DUMMY_QUESTIONS: Question[] = [
       D: 'Endişe',
       E: 'Tereddüt',
     },
-    answer: 'A',
+    correct_answer: 'A',
   },
   {
     id: 8,
@@ -102,7 +102,7 @@ export const DUMMY_QUESTIONS: Question[] = [
       D: 'Özne',
       E: 'Dolaylı tümleç',
     },
-    answer: 'D',
+    correct_answer: 'D',
   },
   {
     id: 9,
@@ -114,7 +114,7 @@ export const DUMMY_QUESTIONS: Question[] = [
       D: 'Bağlaç',
       E: 'Fiil',
     },
-    answer: 'B',
+    correct_answer: 'B',
   },
   {
     id: 10,
@@ -126,7 +126,7 @@ export const DUMMY_QUESTIONS: Question[] = [
       D: 'Koşul',
       E: 'Amaç',
     },
-    answer: 'C',
+    correct_answer: 'C',
   },
   {
     id: 11,
@@ -138,7 +138,7 @@ export const DUMMY_QUESTIONS: Question[] = [
       D: 'Ve',
       E: 'Ki',
     },
-    answer: 'D',
+    correct_answer: 'D',
   },
   {
     id: 12,
@@ -150,7 +150,7 @@ export const DUMMY_QUESTIONS: Question[] = [
       D: 'Sınav sonuçları açıklandı.',
       E: 'Arkadaşıyla uzun zamandır görüşmüyor.',
     },
-    answer: 'A',
+    correct_answer: 'A',
   },
   {
     id: 13,
@@ -162,7 +162,7 @@ export const DUMMY_QUESTIONS: Question[] = [
       D: 'Bağlaç',
       E: 'Fiil',
     },
-    answer: 'A',
+    correct_answer: 'A',
   },
   {
     id: 14,
@@ -174,7 +174,7 @@ export const DUMMY_QUESTIONS: Question[] = [
       D: 'Fiil',
       E: 'Bağlaç',
     },
-    answer: 'B',
+    correct_answer: 'B',
   },
   {
     id: 15,
@@ -186,7 +186,7 @@ export const DUMMY_QUESTIONS: Question[] = [
       D: 'Her hafta sonu sinemaya gidiyoruz.',
       E: 'Onunla konuşmak çok zor.',
     },
-    answer: 'B',
+    correct_answer: 'B',
   },
 ];
 

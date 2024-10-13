@@ -2,7 +2,7 @@ import React from 'react';
 
 interface SwitchProps {
   label: string;
-  value: boolean;
+  value: boolean | undefined;
   onChange: (value: boolean) => void;
 }
 
