@@ -1,7 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { DUMMY_QUESTIONS } from 'dummy/question';
-import { persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
 
 export type UserAnswers = Record<number, string>;
 export interface IExamState {
@@ -42,13 +40,6 @@ export const examSlice = createSlice({
     },
   },
 });
-
-const examPersistConfig = {
-  key: 'auth',
-  storage,
-};
-
-export const persistedReducer = persistReducer(examPersistConfig, examSlice.reducer);
 
 export const { resetState, updateActiveQuestionID, updateUserAnswers, changeShowedAnswers } = examSlice.actions;
 
