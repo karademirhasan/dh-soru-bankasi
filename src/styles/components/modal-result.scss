@@ -12,10 +12,73 @@
   .result {
     @include Text-Body-2;
     margin-bottom: 35px;
+    display: flex;
+    gap: 20px;
   }
   .actions {
     display: flex;
     justify-content: center;
     gap: 20px;
+  }
+}
+
+.Result-Box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &.type-net {
+    .Result-Box-Icon {
+      background-color: $Color-Blue;
+    }
+    .Result-Box-Text {
+      color: $Color-Blue;
+    }
+  }
+  &.type-correct {
+    .Result-Box-Icon {
+      background-color: $Color-Green-2;
+    }
+    .Result-Box-Text {
+      color: $Color-Green-2;
+    }
+  }
+  &.type-wrong {
+    .Result-Box-Icon {
+      background-color: $Color-Red;
+    }
+    .Result-Box-Text {
+      color: $Color-Red;
+    }
+  }
+  &.type-empty {
+    .Result-Box-Icon {
+      background-color: $Color-Border-Blue;
+    }
+    .Result-Box-Text {
+      color: $Color-Border-Blue;
+    }
+  }
+  &-Icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    svg {
+      width: 28px;
+      height: 28px;
+      path {
+        fill: $Color-LightGray;
+      }
+    }
+  }
+
+  &-Text {
+    @include Text-Body-2;
+    color: $Color-LightGray;
+    text-align: center;
+    font-weight: 700;
   }
 }

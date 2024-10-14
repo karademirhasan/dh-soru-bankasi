@@ -1,24 +1,24 @@
 import IconArrowLeft from 'assets/icons/arrow-left.svg';
-import IconButton from 'components/elements/IconButton';
+import IconButton from 'components/elements/IconButton/IconButton';
 import { Colors, IconDirection, Sizes } from 'types/enums';
 
 import IconChevronLeft from 'assets/icons/chevron-left.svg';
 import IconChevronRight from 'assets/icons/chevron-right.svg';
 import IconPower from 'assets/icons/power.svg';
 
-import Button from 'components/elements/Button';
+import Button from 'components/elements/Button/Button';
 import { DUMMY_QUESTIONS, DUMMY_EXAM_DETAIL } from 'dummy/question';
 import { QuestionDetail } from 'components/QuestionDetail';
-import { IconWrapper } from 'components/elements/IconWrapper';
-import { Switch } from 'components/elements/Switch';
-import { useContext, useMemo } from 'react';
+import { IconWrapper } from 'components/elements/IconWrapper/IconWrapper';
+import { Switch } from 'components/elements/Switch/Switch';
+import { useCallback, useContext, useMemo } from 'react';
 import { AnswerKeys } from 'components/AnswerKeys';
 import { GlobalContext } from 'contexts/GlobalProvider';
 import { useAppDispatch, useAppSelector } from 'store';
 import { changeShowedAnswers, resetState, updateActiveQuestionID } from 'features/exam/examSlice';
 import { useNavigate } from 'react-router-dom';
-import { ModalExitExam } from 'components/ModalExitExam';
-import { ModalResult } from 'components/ModalResult';
+import ModalExitExam from 'components/ModalExitExam';
+import ModalResult from 'components/ModalResult';
 
 export const Exam = () => {
   const dispatch = useAppDispatch();
@@ -47,9 +47,12 @@ export const Exam = () => {
     }
   };
 
-  const updateActiveQuestion = (question_id: number) => {
-    dispatch(updateActiveQuestionID(question_id));
-  };
+  const updateActiveQuestion = useCallback(
+    (question_id: number) => {
+      dispatch(updateActiveQuestionID(question_id));
+    },
+    [dispatch],
+  );
 
   const onClickEndtoExam = () => {
     setOpenModalExitExam(true);
@@ -76,6 +79,14 @@ export const Exam = () => {
     dispatch(resetState());
     setOpenModalResult(false);
   };
+
+  const DUMMY_QUESTIONS_IDS = useMemo(() => {
+    return DUMMY_QUESTIONS.map(question => {
+      return {
+        id: question.id,
+      };
+    });
+  }, []);
 
   return (
     <div className="Page-Exam">
@@ -137,7 +148,7 @@ export const Exam = () => {
               updateActiveQuestion={updateActiveQuestion}
               active_question={active_question_id}
               answers={user_answers}
-              data={DUMMY_QUESTIONS}
+              data={DUMMY_QUESTIONS_IDS}
             />
           </div>
         </div>

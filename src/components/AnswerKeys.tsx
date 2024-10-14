@@ -1,9 +1,9 @@
 import IconLesson from 'assets/icons/lesson.svg';
-import { DUMMY_EXAM_DETAIL, Question } from 'dummy/question';
+import { DUMMY_EXAM_DETAIL, QuestionID } from 'dummy/question';
 import { UserAnswers } from 'features/exam/examSlice';
 
 interface AnswerKeysProps {
-  data: Question[];
+  data: QuestionID[];
   answers: UserAnswers;
   active_question: number;
   updateActiveQuestion: (question_id: number) => void;
@@ -46,7 +46,7 @@ const AnswerKey = ({
   is_active_question,
   onClickUpdateActiveQuestion,
 }: {
-  question: Question;
+  question: QuestionID;
   answer: number | null | string;
   is_active_question: boolean;
   onClickUpdateActiveQuestion: (question_id: number) => void;

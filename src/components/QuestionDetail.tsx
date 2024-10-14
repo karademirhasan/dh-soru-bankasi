@@ -1,5 +1,5 @@
 import { Question } from 'dummy/question';
-import IconButton from './elements/IconButton';
+import IconButton from 'components/elements/IconButton/IconButton';
 import { Colors, Sizes } from 'types/enums';
 
 import IconBrush from 'assets/icons/brush.svg';
@@ -8,8 +8,8 @@ import IconZoomOut from 'assets/icons/zoom-out.svg';
 import IconAlert from 'assets/icons/alert-circle.svg';
 import IconPlay from 'assets/icons/play.svg';
 
-import Badge from './elements/Badge';
-import Button from './elements/Button';
+import Badge from 'components/elements/Badge/Badge';
+import Button from 'components/elements/Button/Button';
 import { useAppDispatch, useAppSelector } from 'store';
 import { updateUserAnswers } from 'features/exam/examSlice';
 import { decreaseZoomLevel, increaseZoomLevel } from 'features/exam/uiSlice';
@@ -41,7 +41,7 @@ export const QuestionDetail = ({ data }: QuestionDetailProps) => {
       <div className="QuestionDetail-Heading">
         <Badge>Soru: Türkçe #{data?.id}</Badge>
         <div className="QuestionDetail-Heading-Actions">
-          <IconButton size={Sizes.Medium} color={Colors.Gray} onClick={() => console.log('Bookmark')}>
+          <IconButton size={Sizes.Medium} color={Colors.Gray} onClick={() => console.log('Brush')}>
             <IconBrush />
           </IconButton>
           <IconButton
@@ -55,7 +55,7 @@ export const QuestionDetail = ({ data }: QuestionDetailProps) => {
           <IconButton disabled={zoom_level === 1} size={Sizes.Medium} color={Colors.Gray} onClick={onClickZoomOut}>
             <IconZoomOut />
           </IconButton>
-          <IconButton size={Sizes.Medium} color={Colors.Gray} onClick={() => console.log('Bookmark')}>
+          <IconButton size={Sizes.Medium} color={Colors.Gray} onClick={() => console.log('Alert')}>
             <IconAlert />
           </IconButton>
         </div>

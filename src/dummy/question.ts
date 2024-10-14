@@ -5,6 +5,10 @@ export interface Question {
   correct_answer: string;
 }
 
+export interface QuestionID {
+  id: number;
+}
+
 export const DUMMY_QUESTIONS: Question[] = [
   {
     id: 1,

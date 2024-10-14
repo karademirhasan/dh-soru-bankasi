@@ -1,6 +1,6 @@
 import { useRoutes } from 'react-router-dom';
-import { Layout } from './components/layout/Layout';
 import { ROUTES } from 'constant/routes';
+import { Layout } from 'components/Layout/Layout';
 
 function App() {
   return <Layout>{useRoutes(ROUTES)}</Layout>;

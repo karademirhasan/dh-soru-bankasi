@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Colors, Sizes } from 'types/enums';
 import { ButtonProps } from 'types/interfaces';
-
+import classNames from 'classnames';
+import styles from './IconButton.module.scss';
 const IconButton = ({
   to,
   onClick,
@@ -11,18 +12,20 @@ const IconButton = ({
   disabled = false,
   children,
 }: Omit<ButtonProps, 'icon' | 'iconDirection'>) => {
-  const classnames = `IconButton Color-${color}  Size-${size} ${disabled ? 'Disabled' : ''}`;
+  const classname_list = classNames(styles.IconButton, styles[`Color-${color}`], styles[`Size-${size}`], {
+    Disabled: disabled,
+  });
 
   if (onClick) {
     return (
-      <button className={classnames} onClick={onClick}>
+      <button className={classname_list} onClick={onClick}>
         {children}
       </button>
     );
   }
 
   return (
-    <Link className={classnames} to={to || '#'}>
+    <Link className={classname_list} to={to || '#'}>
       {children}
     </Link>
   );

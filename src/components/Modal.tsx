@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
 import React, { useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import IconButton from './elements/IconButton';
+import IconButton from 'components/elements/IconButton/IconButton';
 import { Colors } from 'types/enums';
 
 import IconClose from 'assets/icons/close.svg';
@@ -12,7 +12,6 @@ export interface ModalProps {
   onClickConfirm?: () => void;
 }
 
-// Use the prop types in the component
 export const Modal: React.FC<ModalProps> = ({ children, open, onClose }) => {
   const nodeRef = useRef(null);
   if (!open) return null;

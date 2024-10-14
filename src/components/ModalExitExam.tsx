@@ -1,12 +1,12 @@
 import { Modal, ModalProps } from './Modal';
 
 import IconAlert from 'assets/icons/alert.svg';
-import Button from './elements/Button';
+import Button from 'components/elements/Button/Button';
 import { Colors } from 'types/enums';
 
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
-export const ModalExitExam: FC<ModalProps> = ({ open, onClose, onClickConfirm }) => {
+const ModalExitExam: FC<ModalProps> = memo(({ open, onClose, onClickConfirm }) => {
   return (
     <Modal open={open} onClose={onClose}>
       <div className="Modal-ExitExam">
@@ -26,4 +26,6 @@ export const ModalExitExam: FC<ModalProps> = ({ open, onClose, onClickConfirm })
       </div>
     </Modal>
   );
-};
+});
+
+export default memo(ModalExitExam);

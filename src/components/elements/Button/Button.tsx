@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { Colors, IconDirection, Sizes } from 'types/enums';
 import { ButtonProps } from 'types/interfaces';
 import { ButtonHTMLAttributes } from 'react';
+import classNames from 'classnames';
+import styles from './Button.module.scss';
 
 const Button = ({
   to,
@@ -15,14 +17,19 @@ const Button = ({
   children,
   className = '',
 }: ButtonProps) => {
-  const classnames = `Button Color-${color}  Size-${size} ${
-    icon ? 'has-icon' : ''
-  } IconDirection-${iconDirection} ${className}`;
+  const classname = classNames(
+    styles.Button,
+    styles[`Color-${color}`],
+    styles[`Size-${size}`],
+    { [styles[`IconDirection-${iconDirection}`]]: icon },
+    { 'has-icon': icon },
+    className,
+  );
 
   return (
-    <ButtonTag component={onClick ? 'button' : Link} className={classnames} onClick={onClick} to={to}>
-      {icon ? <span className="icon">{icon}</span> : null}
-      <span className="label">{children}</span>
+    <ButtonTag component={onClick ? 'button' : Link} className={classname} onClick={onClick} to={to}>
+      {icon ? <span className={styles['Button-Icon']}>{icon}</span> : null}
+      <span className={styles['Button-Label']}>{children}</span>
     </ButtonTag>
   );
 };

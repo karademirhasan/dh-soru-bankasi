@@ -14,7 +14,7 @@
     @include transition-default;
   }
 
-  .icon {
+  &-Icon {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,7 +23,7 @@
       height: 18px;
     }
   }
-  .label {
+  &-Label {
     text-align: center;
     font-size: 14px;
     font-weight: 800;
@@ -46,7 +46,7 @@
 
   &.Color-green {
     background-color: $Color-Green;
-    .label {
+    .Button-Label {
       color: $Color-White;
     }
     &:hover {
@@ -56,7 +56,7 @@
 
   &.Color-red {
     background-color: $Color-Red;
-    .label {
+    .Button-Label {
       color: $Color-White;
     }
     &:hover {

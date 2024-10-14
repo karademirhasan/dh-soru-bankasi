@@ -1,5 +1,6 @@
 import React from 'react';
 
+import styles from './Switch.module.scss';
 interface SwitchProps {
   label: string;
   value: boolean | undefined;
@@ -8,10 +9,13 @@ interface SwitchProps {
 
 export const Switch: React.FC<SwitchProps> = ({ label, value, onChange }) => {
   return (
-    <div className="Switch">
-      <div className="Switch-Label">{label}</div>
-      <div className={`Switch-Button ${value ? 'Checked' : ''}`} onClick={() => onChange(!value)}></div>
-      <div className="Switch-Input">
+    <div className={styles['Switch']}>
+      <div className={styles['Switch-Label']}>{label}</div>
+      <div
+        className={`${styles['Switch-Button']} ${value ? styles['checked'] : ''}`}
+        onClick={() => onChange(!value)}
+      ></div>
+      <div className={styles['Switch-Input']}>
         <input type="checkbox" checked={value} onChange={e => onChange(e.target.checked)} />
       </div>
     </div>
