@@ -67,12 +67,10 @@
   &.Color-yellow {
     background-color: $Color-Yellow;
     gap: 12px;
-    justify-content: space-between;
-    padding-left: 8px;
 
-    &.hasIcon {
+    &.has-icon {
+      padding-left: 8px;
       justify-content: space-between;
-      padding-left: 7px;
     }
     &:hover {
       background-color: rgba($Color-Yellow, 0.8);
