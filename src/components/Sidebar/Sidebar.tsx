@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import IconLogo from 'assets/icons/logo.svg';
 import { DATA_APPS, DATA_FEEDBACK, DATA_MENU_ITEMS } from 'data/data';
-import { MenuItem } from 'components/elements/MenuItem/MenuItem';
+import { MenuItem } from 'components/Elements/MenuItem/MenuItem';
 import styles from './Sidebar.module.scss';
 const Sidebar = () => {
   return (

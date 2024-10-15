@@ -1,4 +1,4 @@
-import IconButton from 'components/elements/IconButton/IconButton';
+import IconButton from 'components/Elements/IconButton/IconButton';
 import { Colors, Sizes } from 'types/enums';
 
 import IconBrush from 'assets/icons/brush.svg';
@@ -7,8 +7,8 @@ import IconZoomOut from 'assets/icons/zoom-out.svg';
 import IconAlert from 'assets/icons/alert-circle.svg';
 import IconPlay from 'assets/icons/play.svg';
 
-import Badge from 'components/elements/Badge/Badge';
-import Button from 'components/elements/Button/Button';
+import Badge from 'components/Elements/Badge/Badge';
+import Button from 'components/Elements/Button/Button';
 import { useAppDispatch, useAppSelector } from 'store';
 import { updateUserAnswers } from 'features/exam/examSlice';
 import { decreaseZoomLevel, increaseZoomLevel } from 'features/exam/uiSlice';

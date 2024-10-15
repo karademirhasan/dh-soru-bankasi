@@ -1,16 +1,16 @@
 import IconArrowLeft from 'assets/icons/arrow-left.svg';
-import IconButton from 'components/elements/IconButton/IconButton';
+import IconButton from 'components/Elements/IconButton/IconButton';
 import { Colors, IconDirection, Sizes } from 'types/enums';
 
 import IconChevronLeft from 'assets/icons/chevron-left.svg';
 import IconChevronRight from 'assets/icons/chevron-right.svg';
 import IconPower from 'assets/icons/power.svg';
 
-import Button from 'components/elements/Button/Button';
+import Button from 'components/Elements/Button/Button';
 import { DUMMY_EXAM_DETAIL } from 'dummy/question';
 import { QuestionDetail } from 'components/QuestionDetail';
-import { IconWrapper } from 'components/elements/IconWrapper/IconWrapper';
-import { Switch } from 'components/elements/Switch/Switch';
+import { IconWrapper } from 'components/Elements/IconWrapper/IconWrapper';
+import { Switch } from 'components/Elements/Switch/Switch';
 import { useCallback, useContext, useMemo } from 'react';
 import { AnswerKeys } from 'components/AnswerKeys';
 import { GlobalContext } from 'contexts/GlobalProvider';

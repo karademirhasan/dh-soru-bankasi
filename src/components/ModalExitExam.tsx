@@ -1,7 +1,7 @@
 import { Modal, ModalProps } from './Modal';
 
 import IconAlert from 'assets/icons/alert.svg';
-import Button from 'components/elements/Button/Button';
+import Button from 'components/Elements/Button/Button';
 import { Colors } from 'types/enums';
 
 import { FC, memo } from 'react';

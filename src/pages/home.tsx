@@ -1,4 +1,4 @@
-import Button from 'components/elements/Button/Button';
+import Button from 'components/Elements/Button/Button';
 import { Colors } from 'types/enums';
 
 export const Home = () => {

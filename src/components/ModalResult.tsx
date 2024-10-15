@@ -9,7 +9,7 @@ import IconDivide from 'assets/icons/divide-circle.svg';
 import IconMinusCircle from 'assets/icons/minus-circle.svg';
 import IconCheckCircle from 'assets/icons/check-circle.svg';
 import IconXCircle from 'assets/icons/x-circle.svg';
-import Button from 'components/elements/Button/Button';
+import Button from 'components/Elements/Button/Button';
 
 const ModalResult: FC<ModalProps> = ({ open, onClose, onClickConfirm, questions }) => {
   const { user_answers } = useAppSelector(state => state.exam);

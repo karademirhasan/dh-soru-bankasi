@@ -1,1 +1,34 @@
-{"root":["./src/app.tsx","./src/main.tsx","./src/store.ts","./src/vite-env.d.ts","./src/components/answerkeys.tsx","./src/components/modal.tsx","./src/components/modalexitexam.tsx","./src/components/modalresult.tsx","./src/components/questiondetail.tsx","./src/components/layout/layout.tsx","./src/components/sidebar/sidebar.tsx","./src/components/elements/badge/badge.tsx","./src/components/elements/button/button.tsx","./src/components/elements/iconbutton/iconbutton.tsx","./src/components/elements/iconwrapper/iconwrapper.tsx","./src/components/elements/menuitem/menuitem.tsx","./src/components/elements/switch/switch.tsx","./src/constant/global.ts","./src/constant/routes.tsx","./src/contexts/globalprovider.tsx","./src/data/data.tsx","./src/dummy/question.ts","./src/features/exam/examslice.ts","./src/features/exam/uislice.ts","./src/pages/exam.tsx","./src/pages/home.tsx","./src/services/getquestions.ts","./src/types/enums.ts","./src/types/interfaces.ts"],"version":"5.6.3"}
+{
+  "root": [
+    "./src/app.tsx",
+    "./src/main.tsx",
+    "./src/store.ts",
+    "./src/vite-env.d.ts",
+    "./src/components/answerkeys.tsx",
+    "./src/components/modal.tsx",
+    "./src/components/modalexitexam.tsx",
+    "./src/components/modalresult.tsx",
+    "./src/components/questiondetail.tsx",
+    "./src/components/layout/layout.tsx",
+    "./src/components/sidebar/sidebar.tsx",
+    "./src/components/Elements/badge/badge.tsx",
+    "./src/components/Elements/button/button.tsx",
+    "./src/components/Elements/iconbutton/iconbutton.tsx",
+    "./src/components/Elements/iconwrapper/iconwrapper.tsx",
+    "./src/components/Elements/menuitem/menuitem.tsx",
+    "./src/components/Elements/switch/switch.tsx",
+    "./src/constant/global.ts",
+    "./src/constant/routes.tsx",
+    "./src/contexts/globalprovider.tsx",
+    "./src/data/data.tsx",
+    "./src/dummy/question.ts",
+    "./src/features/exam/examslice.ts",
+    "./src/features/exam/uislice.ts",
+    "./src/pages/exam.tsx",
+    "./src/pages/home.tsx",
+    "./src/services/getquestions.ts",
+    "./src/types/enums.ts",
+    "./src/types/interfaces.ts"
+  ],
+  "version": "5.6.3"
+}

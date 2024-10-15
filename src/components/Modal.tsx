@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
 import React, { useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import IconButton from 'components/elements/IconButton/IconButton';
+import IconButton from 'components/Elements/IconButton/IconButton';
 import { Colors } from 'types/enums';
 
 import IconClose from 'assets/icons/close.svg';
