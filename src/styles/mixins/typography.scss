@@ -1,40 +1,40 @@
 @mixin Text-Heading-3 {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 400;
   line-height: 32px;
 }
 
 @mixin Text-Heading-6 {
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 600;
   line-height: 22px;
 }
 
 @mixin Text-Body-1 {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
   line-height: 26px;
 }
 
 @mixin Text-Body-2 {
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
 }
 
 @mixin Text-Body-3 {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 
 @mixin Text-Body-4 {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;

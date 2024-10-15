@@ -6,8 +6,8 @@
 }
 
 ::selection {
-  background: black;
-  color: white;
+  background: $Color-Primary;
+  color: $Color-White;
 }
 
 html {
@@ -17,7 +17,7 @@ html {
 
 body {
   font-size: 16px;
-  color: black;
+  color: $Color-Primary;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
