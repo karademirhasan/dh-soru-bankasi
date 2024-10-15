@@ -22,7 +22,7 @@ const Button = ({
     styles[`Color-${color}`],
     styles[`Size-${size}`],
     { [styles[`IconDirection-${iconDirection}`]]: icon },
-    { 'has-icon': icon },
+    { [styles[`has-icon`]]: icon },
     className,
   );
 

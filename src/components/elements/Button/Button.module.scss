@@ -67,7 +67,8 @@
   &.Color-yellow {
     background-color: $Color-Yellow;
     gap: 12px;
-    justify-content: center;
+    justify-content: space-between;
+    padding-left: 8px;
 
     &.hasIcon {
       justify-content: space-between;
