@@ -7,7 +7,7 @@ import IconChevronRight from 'assets/icons/chevron-right.svg';
 import IconPower from 'assets/icons/power.svg';
 
 import Button from 'components/elements/Button/Button';
-import { DUMMY_QUESTIONS, DUMMY_EXAM_DETAIL } from 'dummy/question';
+import { DUMMY_EXAM_DETAIL } from 'dummy/question';
 import { QuestionDetail } from 'components/QuestionDetail';
 import { IconWrapper } from 'components/elements/IconWrapper/IconWrapper';
 import { Switch } from 'components/elements/Switch/Switch';
@@ -19,6 +19,8 @@ import { changeShowedAnswers, resetState, updateActiveQuestionID } from 'feature
 import { useNavigate } from 'react-router-dom';
 import ModalExitExam from 'components/ModalExitExam';
 import ModalResult from 'components/ModalResult';
+import { useQuery } from '@tanstack/react-query';
+import { getQuestions } from 'services/GetQuestions';
 
 export const Exam = () => {
   const dispatch = useAppDispatch();
@@ -27,9 +29,26 @@ export const Exam = () => {
 
   const { openModalExitExam, setOpenModalExitExam, openModalResult, setOpenModalResult } = useContext(GlobalContext);
 
+  const {
+    isLoading,
+    error,
+    data: DATA_QUESTIONS,
+  } = useQuery({
+    queryKey: ['repoData'],
+    queryFn: () => getQuestions(),
+  });
+
   const activeQuestion = useMemo(() => {
-    return DUMMY_QUESTIONS.find(question => question.id === active_question_id);
-  }, [active_question_id]);
+    return DATA_QUESTIONS?.find((question: { id: number }) => question?.id === active_question_id);
+  }, [active_question_id, DATA_QUESTIONS]);
+
+  const DATA_QUESTIONS_IDS = useMemo(() => {
+    return DATA_QUESTIONS?.map((question: { id: number }) => {
+      return {
+        id: question?.id,
+      };
+    });
+  }, [DATA_QUESTIONS]);
 
   const onClickBack = () => {
     navigate('/');
@@ -42,7 +61,7 @@ export const Exam = () => {
   };
 
   const onClickNextQuestion = () => {
-    if (active_question_id < DUMMY_QUESTIONS.length) {
+    if (active_question_id < (DATA_QUESTIONS?.length ?? 0)) {
       dispatch(updateActiveQuestionID(active_question_id + 1));
     }
   };
@@ -80,13 +99,9 @@ export const Exam = () => {
     setOpenModalResult(false);
   };
 
-  const DUMMY_QUESTIONS_IDS = useMemo(() => {
-    return DUMMY_QUESTIONS.map(question => {
-      return {
-        id: question.id,
-      };
-    });
-  }, []);
+  if (isLoading) return 'Loading...';
+
+  if (error) return 'An error has occurred: ' + error.message;
 
   return (
     <div className="Page-Exam">
@@ -95,7 +110,13 @@ export const Exam = () => {
         onClose={onCloseModalExitExam}
         onClickConfirm={onClickExitExam}
       ></ModalExitExam>
-      <ModalResult open={openModalResult} onClose={onCloseModalResult} onClickConfirm={onClickNewExam}></ModalResult>
+
+      <ModalResult
+        questions={DATA_QUESTIONS}
+        open={openModalResult}
+        onClose={onCloseModalResult}
+        onClickConfirm={onClickNewExam}
+      />
       <div className="Page-Exam-Header">
         <IconButton size={Sizes.Small} onClick={onClickBack}>
           <IconArrowLeft />
@@ -148,7 +169,7 @@ export const Exam = () => {
               updateActiveQuestion={updateActiveQuestion}
               active_question={active_question_id}
               answers={user_answers}
-              data={DUMMY_QUESTIONS_IDS}
+              data={DATA_QUESTIONS_IDS ?? []}
             />
           </div>
         </div>

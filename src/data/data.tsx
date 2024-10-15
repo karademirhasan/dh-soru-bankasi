@@ -4,7 +4,7 @@ import IconQuestion from 'assets/icons/sidebar-3.svg';
 import IconPracticeTests from 'assets/icons/sidebar-4.svg';
 import IconGuidance from 'assets/icons/sidebar-5.svg';
 import IconStatistics from 'assets/icons/sidebar-6.svg';
-import IconAssessment from 'assets/icons/sidebar-7.svg';
+import IconAssessment from 'assets/icons/sidebar-7.png';
 
 import IconCozucu from 'assets/icons/cozucu.svg';
 import IconKocumYanimda from 'assets/icons/kocum-yanimda.svg';
@@ -14,7 +14,7 @@ import IconFeedBack from 'assets/icons/feedback.svg';
 
 export type MenuItemProps = {
   to: string;
-  icon: JSX.Element;
+  icon: JSX.Element | string;
   text: string;
   target?: '_blank' | '_self';
 };
@@ -53,7 +53,7 @@ export const DATA_MENU_ITEMS: MenuItemProps[] = [
   {
     text: 'Ölçme Değerlendirme',
     to: '/',
-    icon: <IconAssessment />,
+    icon: IconAssessment,
   },
 ];
 

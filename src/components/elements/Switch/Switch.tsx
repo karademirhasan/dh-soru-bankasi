@@ -12,7 +12,7 @@ export const Switch: React.FC<SwitchProps> = ({ label, value, onChange }) => {
     <div className={styles['Switch']}>
       <div className={styles['Switch-Label']}>{label}</div>
       <div
-        className={`${styles['Switch-Button']} ${value ? styles['checked'] : ''}`}
+        className={`${styles['Switch-Button']} ${value ? styles['Checked'] : ''}`}
         onClick={() => onChange(!value)}
       ></div>
       <div className={styles['Switch-Input']}>

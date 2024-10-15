@@ -5,11 +5,13 @@ import IconButton from 'components/elements/IconButton/IconButton';
 import { Colors } from 'types/enums';
 
 import IconClose from 'assets/icons/close.svg';
+import { Question } from 'types/interfaces';
 export interface ModalProps {
   children?: React.ReactNode;
   open: boolean;
   onClose: () => void;
   onClickConfirm?: () => void;
+  questions?: Question[];
 }
 
 export const Modal: React.FC<ModalProps> = ({ children, open, onClose }) => {

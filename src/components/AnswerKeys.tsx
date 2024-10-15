@@ -1,6 +1,7 @@
 import IconLesson from 'assets/icons/lesson.svg';
-import { DUMMY_EXAM_DETAIL, QuestionID } from 'dummy/question';
+import { DUMMY_EXAM_DETAIL } from 'dummy/question';
 import { UserAnswers } from 'features/exam/examSlice';
+import { QuestionID } from 'types/interfaces';
 
 interface AnswerKeysProps {
   data: QuestionID[];
@@ -19,12 +20,12 @@ export const AnswerKeys = ({ data, answers, active_question, updateActiveQuestio
           </div>
           <div className="exam-summary">
             <div className="exam-name">{DUMMY_EXAM_DETAIL.lesson}</div>
-            <div className="exam-numbers">{data.length} Soru</div>
+            <div className="exam-numbers">{data?.length} Soru</div>
           </div>
         </div>
       </div>
       <div className="AnswerKeys-Questions">
-        {data.map(question => {
+        {data?.map(question => {
           return (
             <AnswerKey
               onClickUpdateActiveQuestion={updateActiveQuestion}

@@ -13,7 +13,7 @@ const IconButton = ({
   children,
 }: Omit<ButtonProps, 'icon' | 'iconDirection'>) => {
   const classname_list = classNames(styles.IconButton, styles[`Color-${color}`], styles[`Size-${size}`], {
-    Disabled: disabled,
+    [styles['Disabled']]: disabled,
   });
 
   if (onClick) {

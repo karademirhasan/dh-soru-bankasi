@@ -12,3 +12,19 @@ export interface ButtonProps {
   onClick?: () => void;
   className?: string;
 }
+
+export interface Question {
+  id: number;
+  question: string;
+  options: Record<string, string>;
+  correct_answer: string;
+}
+
+export interface QuestionID {
+  id: number;
+}
+
+export interface ExamDetail {
+  lesson: string;
+  exam_name: string;
+}

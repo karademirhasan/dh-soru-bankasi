@@ -1,4 +1,3 @@
-import { Question } from 'dummy/question';
 import IconButton from 'components/elements/IconButton/IconButton';
 import { Colors, Sizes } from 'types/enums';
 
@@ -14,6 +13,7 @@ import { useAppDispatch, useAppSelector } from 'store';
 import { updateUserAnswers } from 'features/exam/examSlice';
 import { decreaseZoomLevel, increaseZoomLevel } from 'features/exam/uiSlice';
 import { MAX_ZOOM_LEVEL } from 'constant/global';
+import { Question } from 'types/interfaces';
 
 interface QuestionDetailProps {
   data: Question;

@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { DUMMY_QUESTIONS } from 'dummy/question';
 
 export type UserAnswers = Record<number, string>;
 export interface IExamState {
@@ -11,7 +10,7 @@ export interface IExamState {
 
 const initialState: IExamState = {
   is_show_answers: false,
-  active_question_id: DUMMY_QUESTIONS[0].id,
+  active_question_id: 1,
   show_correct_answers: false,
   user_answers: {},
 };
